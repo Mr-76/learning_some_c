@@ -1,5 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+int meuabs(int valor){
+//funcao para converter em positivo sempre
+if (valor < 0){
+	valor *= -1;
+	return valor;
+}
+else{
+return valor;
+}
+
+}
 
 int main(){
 	printf("******************************************\n");
@@ -45,7 +56,7 @@ int main(){
 			//se ele acertar essa parte do codigo nao eh executada entao para economizar linha
 		//colocar o retirar de pontos aquie ao envez de no else if e no else
 		
-		pontos -= ((abs(chute - numerosecreto))/2);
+		pontos -= ((meuabs(chute - numerosecreto))/2);
 
 		tentativas++;
 	}
