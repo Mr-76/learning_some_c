@@ -24,13 +24,39 @@ int main(){
 
 	int numerosecreto = rand() % 100;
 	int chute;
-	int tentativas = 1;
+	int numero_de_tentativas;
+	int dificuldade;
+	int i = 1;
 	double pontos = 2000;
+	
+	printf("qual a dificuldade ? 1(facil) 2(medio) 3 (dificil) 4(no forebis) \n");
+	
+	scanf("%d", &dificuldade);
 
-	while(1) {
+	if (dificuldade == 1){
+	numero_de_tentativas = 20;
+	
+	}
+
+	else if (dificuldade == 2){
+	numero_de_tentativas = 15;
+	} 
+
+	else if (dificuldade == 3){
+	numero_de_tentativas = 10;
+	}
+	else if(dificuldade == 4){
+	numero_de_tentativas = 2;
+	}
+	else{
+	printf("nao escolhido\n");
+	return 0;
+	}
+
+	for (i = 1; i< numero_de_tentativas;i++){
 		printf("debug o numero eh %d ",numerosecreto);
 		printf("voce tem %.2lf pontos\n\n",pontos);
-		printf("Tentativa %d\n\n", tentativas);
+		printf("Tentativa %d\n\n", i);
 		printf("Qual e o seu chute? ");
 		scanf("%d", &chute);
 
@@ -46,8 +72,9 @@ int main(){
 
  		if(acertou) {
 			printf("Parabens! Voce acertou!\n\n");
+			
 			printf("Jogue de novo, voce e um bom jogador!!\n\n");
-
+			printf("tentativas usadas %d\n",i);
 			break;
 		}
 		
@@ -64,10 +91,9 @@ int main(){
 		
 		pontos -= ((meuabs(chute - numerosecreto))/2.0);
 
-		tentativas++;
 	}
 
 	printf("Fim de jogo.\n\n");
-	printf("Voce acertou em %d tentativas\n\n", tentativas);
 	printf("E terminou com %.2lf pontos \n\n",pontos);
+return 0;
 }
