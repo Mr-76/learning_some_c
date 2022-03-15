@@ -3,4 +3,5 @@ struct elemento{
 	float eletroneg;
 	int numero_atom;
 	char estado[20];
+	char **tipo_toxico;
 };
